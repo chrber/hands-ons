@@ -17,4 +17,7 @@ fi
 
 rm $POSTGRES_CONFIG_SCRIPT
 rm $DCACHE_RPM
+chown root:root /etc/grid-security/host*
 
+rm -rf /pools
+rm -rf /data
