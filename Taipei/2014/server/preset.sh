@@ -6,6 +6,8 @@ yum install postgresql92-server.x86_64 -y
 yum install java-1.7.0-openjdk.x86_64 -y
 yum install nfs-utils -y
 
+cp postgres.sh ~/configurepgsql.sh
+
 echo "RPCBIND_ARGS=\"-i\"" > /etc/sysconfig/rpcbind
 
 service rpcbind restart
@@ -56,5 +58,6 @@ while [[ \$counter -le \$no_of_files ]]
 chmod +x gen_rand_files.sh
 
 iptables -F
+cp /etc/idmapd.conf /etc/idmapd.conf.bak
 sed -ie 's/#Domain = local.domain.edu/Domain = taipei-domain/' /etc/idmapd.conf
 /etc/init.d/rpcidmapd restart

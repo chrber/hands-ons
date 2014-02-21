@@ -21,3 +21,4 @@ createuser -U postgres --no-superuser --no-createrole --createdb chimera
 createuser -U postgres --no-superuser --no-createrole --createdb srmdcache
 createdb -U srmdcache dcache
 createdb -O srmdcache -U postgres billing
+dcache database update
