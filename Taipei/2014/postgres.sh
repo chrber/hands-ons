@@ -18,8 +18,6 @@ EOF
 service postgresql-9.2 restart
 createdb -U postgres chimera
 createuser -U postgres --no-superuser --no-createrole --createdb chimera
-psql -U chimera chimera -f /usr/share/dcache/chimera/sql/create.sql
-createlang -U postgres plpgsql chimera
-psql -U chimera chimera -f /usr/share/dcache/chimera/sql/pgsql-procedures.sql
 createuser -U postgres --no-superuser --no-createrole --createdb srmdcache
 createdb -U srmdcache dcache
+createdb -O srmdcache -U postgres billing
