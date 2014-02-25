@@ -1,4 +1,7 @@
 #/bin/bash
+wget http://repository.egi.eu/sw/production/cas/1/current/repo-files/EGI-trustanchors.repo -O /etc/yum.repos.d/EGI-trust.repo
+yum install ca-policy-egi-core -y
+
 rpm -Uhv http://yum.postgresql.org/9.2/redhat/rhel-6-x86_64/pgdg-sl92-9.2-8.noarch.rpm
 wget http://www.dcache.org/downloads/1.9/repo/2.6/dcache-2.6.21-1.noarch.rpm -O ~/dcache-2.6.21-1.noarch.rpm 
 
