@@ -1,4 +1,9 @@
 #!/bin/bash
+if [ -f ~/create100_Big_Files.sh ]; 
+then
+    rm ~/create100_Big_Files.sh
+fi
+
 POSTGRES_SERVER_COMMAND=/etc/init.d/postgresql-9.2
 POSTGRES_DIRECTORY=/var/lib/pgsql/9.2
 POSTGRES_CONFIG_SCRIPT=~/configurepgsql.sh
