@@ -1,4 +1,7 @@
 #!/bin/sh
+
+yum update -y
+
 useradd dcacheuser
 
 if [ ! -d /home/dcacheuser/.globus ]; 
