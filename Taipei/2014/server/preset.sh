@@ -1,4 +1,6 @@
 #/bin/bash
+
+yum update -y 
 cp create100_Big_Files.sh ~/
 
 wget http://repository.egi.eu/sw/production/cas/1/current/repo-files/EGI-trustanchors.repo -O /etc/yum.repos.d/EGI-trust.repo
