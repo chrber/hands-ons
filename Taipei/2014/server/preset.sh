@@ -62,6 +62,10 @@ while [[ \$counter -le \$no_of_files ]]
 
 chmod +x gen_rand_files.sh
 
+mv /etc/grid-security/hostkey.pem{,-pk8}
+openssl rsa -in /etc/grid-security/hostkey.pem-pk8 -out /etc/grid-security/hostkey.pem
+
+
 iptables -F
 cp /etc/idmapd.conf /etc/idmapd.conf.bak
 sed -ie 's/#Domain = local.domain.edu/Domain = taipei-domain/' /etc/idmapd.conf
