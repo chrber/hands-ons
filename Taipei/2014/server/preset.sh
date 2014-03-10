@@ -2,6 +2,7 @@
 
 yum update -y 
 cp create100_Big_Files.sh ~/
+chmod +x ~/create100_Big_Files.sh
 
 wget http://repository.egi.eu/sw/production/cas/1/current/repo-files/EGI-trustanchors.repo -O /etc/yum.repos.d/EGI-trust.repo
 yum install ca-policy-egi-core -y
@@ -22,14 +23,6 @@ service rpcbind restart
 echo "alias nfs-layouttype4-1 nfs_layout_nfsv41_files" > /etc/modprobe.d/dist-nfsv41.conf
 
 modprobe nfs_layout_nfsv41_files
-
-echo "for index in \`seq 1 100\`;
-do
-dd if=/dev/urandom of=/nfs4/bigFile$index bs=1M count=2
-echo Createing file: $index;
-done" > create100_Big_Files.sh;
-
-chmod +x create100_Big_Files.sh
 
 echo "#/bin/bash
 no_of_files=120
