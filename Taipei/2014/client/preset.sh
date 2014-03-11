@@ -11,8 +11,12 @@ else
     echo "/home/dcacheuser/.globus already exists"; 
 fi
 
-mv /etc/grid-security/hostcert.pem /home/dcacheuser/.globus/usercert.pem
-mv /etc/grid-security/hostkey.pem /home/dcacheuser/.globus/userkey.pem
+cp /etc/grid-security/hostcert.pem /home/dcacheuser/.globus/usercert.pem
+cp /etc/grid-security/hostkey.pem /home/dcacheuser/.globus/userkey.pem
+
+chown dcacheuser:dcacheuser /home/dcacheuser/.globus/userkey.pem 
+chown dcacheuser:dcacheuser /home/dcacheuser/.globus/usercert.pem
+
 
 wget http://repository.egi.eu/sw/production/cas/1/current/repo-files/EGI-trustanchors.repo -O /etc/yum.repos.d/EGI-trust.repo
 yum install ca-policy-egi-core -y
