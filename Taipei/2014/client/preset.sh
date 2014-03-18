@@ -14,8 +14,7 @@ fi
 cp /etc/grid-security/hostcert.pem /home/dcacheuser/.globus/usercert.pem
 cp /etc/grid-security/hostkey.pem /home/dcacheuser/.globus/userkey.pem
 
-chown dcacheuser:dcacheuser /home/dcacheuser/.globus/userkey.pem 
-chown dcacheuser:dcacheuser /home/dcacheuser/.globus/usercert.pem
+chown dcacheuser:dcacheuser -R /home/dcacheuser/.globus
 
 
 wget http://repository.egi.eu/sw/production/cas/1/current/repo-files/EGI-trustanchors.repo -O /etc/yum.repos.d/EGI-trust.repo
