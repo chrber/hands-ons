@@ -1,1 +1,9 @@
 This is the preparation work for GridKA school 2014 dCache workshop
+
+The 2014 directory contains of:
+
+ - servers.txt and clients.txt which contain the client and server addresses for the hands-on.
+   These files are there for parallel ssh or X sessions.
+   
+ - There are directories for the server and the client that hold preset and rollback files to setup
+   and clean the machines.
