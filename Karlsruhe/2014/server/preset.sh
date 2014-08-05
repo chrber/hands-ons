@@ -40,6 +40,6 @@ sed -ie 's/#Domain = local.domain.edu/Domain = desy2014-domain/' /etc/idmapd.con
 /etc/init.d/rpcidmapd restart
 
 rpm -ivh ca_dCacheORG-2.1-1.noarch.rpm 
-rpm -i epel-release.noarch
+yum install epel-release.noarch
 yum install fetch-crl.noarch
 fetch-crl

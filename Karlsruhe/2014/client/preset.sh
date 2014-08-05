@@ -25,6 +25,6 @@ sed -ie 's/#Domain = local.domain.edu/Domain = taipei-domain/' /etc/idmapd.conf
 /etc/init.d/rpcidmapd restart
 
 rpm -ivh ca_dCacheORG-2.1-1.noarch.rpm
-rpm -i epel-release.noarch
+yum install epel-release.noarch
 yum install fetch-crl.noarch
 fetch-crl
