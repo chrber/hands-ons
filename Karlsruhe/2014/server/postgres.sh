@@ -1,4 +1,7 @@
 #/bin/bash
+
+cp /root/hands-ons/Karlsruhe/2014/server/layout.file /etc/dcache/layouts/ws_gridka_2014.conf
+
 service postgresql-9.2 initdb
 sed -ie 's/max_connections = 100/max_connections = 1000/' /var/lib/pgsql/9.2/data/postgresql.conf
 service postgresql-9.2 start

@@ -23,3 +23,5 @@ yum install ca-policy-egi-core -y
 cp /etc/idmapd.conf /etc/idmapd.conf.bak
 sed -ie 's/#Domain = local.domain.edu/Domain = taipei-domain/' /etc/idmapd.conf
 /etc/init.d/rpcidmapd restart
+
+rpm -ivh ca_dCacheORG-2.1-1.noarch.rpm
