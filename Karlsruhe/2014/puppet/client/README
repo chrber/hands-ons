@@ -1,0 +1,15 @@
+To configure a new user in a client machine you have 
+run the script in the right sequence:
+
+1- source setupPuppetClient.sh 
+   this will install the last version of puppet client
+   and will configure the client to be attached to the master
+   During the first connection the client will genrate a certificate
+   which need to be signed by the master.
+
+2- source addNewUser.sh -u username -e
+   this will setup the user for gitolite and the puppet env in the puppet.conf
+   It will create also the key pairs.
+   Do not forget to give the public key to the gitolite admin
+
+ 
