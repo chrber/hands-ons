@@ -1,0 +1,7 @@
+class install_pkgs {
+	notify {"This actually did something":}
+
+}
+
+
+
