@@ -3,3 +3,6 @@ put this file into /etc/puppet/puppet.conf
 
 [initPuppetEnv.py]
 run this file to create the user environment for puppet
+
+[gitolite.conf]
+Configuration file to administer gitolite inside puppet.
