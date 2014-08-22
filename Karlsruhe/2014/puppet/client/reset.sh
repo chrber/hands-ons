@@ -44,8 +44,8 @@ if [ $KEYS ]; then
 
     if [ -f $USERKEYPATH ]; then
 
-        #rm -f $USERKEYPATH
-        #rm -f $USERKEYPATH.pub
+        rm -f $USERKEYPATH
+        rm -f $USERKEYPATH.pub
         retcode=$?
 	if [ $retcode -eq 0 ]; then
             echo "[INFO] $USERKEYPATH and $USERKEYPATH.pub removed"
@@ -68,7 +68,7 @@ fi
 if [ $RESCERT ] && [ ! $PUPREM ] ; then
 
     if [ -d $PUPPETCERT ]; then
-	#rm -fr $PUPPETCERT
+	rm -fr $PUPPETCERT
 	retcode=$?
         if [ $retcode -eq 0 ]; then
             echo "[INFO] $PUPPETCERT removed"
@@ -93,7 +93,7 @@ if [ $PUPREM ]; then
     #sed  -i '/server/d' $PUPPETCONF
 
 
-    #yum puppet remove
+    rpm -e --nodeps puppet
     retcode=$?
     if [ $retcode -eq 0 ]; then
         echo "[INFO] puppet package removed"
@@ -104,7 +104,7 @@ if [ $PUPREM ]; then
 	 
     if [ -d $PUPPETDIR ]; then
     
-        #rm -fr $PUPPETDIR
+        rm -fr $PUPPETDIR
 	retcode=$?
         if [ $retcode -eq 0 ]; then
             echo "[INFO] $PUPPETDIR removed"
@@ -119,7 +119,7 @@ if [ $PUPREM ]; then
 
     if [ -d $PUPPETWORK ]; then
     
-        #rm -fr $PUPPETWORK
+        rm -fr $PUPPETWORK
         if [ $retcode -eq 0 ]; then
             echo "[INFO] $PUPPETWORK removed"
 	else 
