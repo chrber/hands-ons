@@ -21,19 +21,12 @@ class dcache::config(){
 		mode   => "u=rw,go=";
 	}
 
-	file { "/tmp/configurepgsql.sh": 
+	file { "/home/dcache/configurepgsql.sh": 
         ensure   => "present",
         owner    => "root",
         group    => "root",
         mode     => "u=rwx,go=rwx",
-        content  => template("psql/configurepgsql.sh.erb");
+        source => "puppet:///modules/psql/configurepgsql.sh";
 	}
-	#exec { "configurepgsql":
-        #       require => File['/tmp/configurepgsql.sh'],
-	#	command => "sudo bash /tmp/configurepgsql.sh > /tmp/configurepgsql.out",
-	#	path    => [ "/usr/local/bin/", "/bin/", "/usr/bin/" ],  
-	#}
-
 
 }
-
