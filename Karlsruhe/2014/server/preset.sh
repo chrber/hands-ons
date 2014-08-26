@@ -39,6 +39,8 @@ cp /etc/idmapd.conf /etc/idmapd.conf.bak
 sed -ie 's/#Domain = local.domain.edu/Domain = karlsruhe-domain/' /etc/idmapd.conf
 /etc/init.d/rpcidmapd restart
 
+chkconfig --add rpcidmapd
+
 rpm -ivh ca_dCacheORG-2.1-1.noarch.rpm 
 yum install epel-release.noarch
 yum install fetch-crl.noarch
