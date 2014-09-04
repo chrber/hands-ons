@@ -1,6 +1,10 @@
-gks-111.scc.kit.edu:24
-gks-119.scc.kit.edu:24
-gks-123.scc.kit.edu:24
-gks-125.scc.kit.edu:24
-gks-127.scc.kit.edu:24
-gks-129.scc.kit.edu:24
+gks-111
+gks-113
+gks-115
+gks-117
+gks-119
+gks-123
+gks-125
+gks-127
+gks-129
+gks-135
