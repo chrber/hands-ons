@@ -1,14 +1,16 @@
 Migrate from one tape system to another
-
-===
+=====================
 
 Preparation:
 
  * Each file in a pool has one of the 4 primary states: “cached” (<C---), “precious” (<-P--), “from client” (<--C-), and “from store” (<---S).
 
+Procedure:
+
  * Remove old hsm instance entry from pools that are connected to the old tape system
-    [vm-dcache-001] (pool_write@writePoolDomain) admin > hsm remove osm
-    [vm-dcache-001] (pool_write@writePoolDomain) admin > hsm create osm osmNew -command=/usr/share/dcache/lib/hsmcp.rb -hsmBase=/hsmTape_new/data -hsmInstance=osmNew
+ 
+        [vm-dcache-001] (pool_write@writePoolDomain) admin > hsm remove osm
+        [vm-dcache-001] (pool_write@writePoolDomain) admin > hsm create osm osmNew -command=/usr/share/dcache/lib/hsmcp.rb -hsmBase=/hsmTape_new/data -hsmInstance=osmNew
 
 * Configure one read pool and one write pool
     [root@vm-dcache-001 ~]# dcache pool create --size=419430400  --meta=db --lfs=precious /var/pools/tapeMigrationWritePool tapeMigrationWritePool tapeMigrationPoolDomain
