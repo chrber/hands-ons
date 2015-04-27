@@ -67,6 +67,6 @@ Procedure:
 
         wc -l /tmp/allPnfsIDs_oldHSM
 
- * Delete entries from t_locationinfo, with the old tape (allthough this step can be ommitted as it does not hurt)
+* Delete entries from t_locationinfo, with the old tape (allthough this step can be ommitted as it does not hurt)
 
     chimera=# delete from t_locationinfo where ipnfsid in (Select id from tmp_ids) AND ilocation like 'hsm://osm/%'; 
