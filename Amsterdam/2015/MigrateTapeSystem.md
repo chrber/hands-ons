@@ -56,17 +56,17 @@ Procedure:
 * Check if all files have an entry on the new tape system and in the t_locationinfo table
    * Create tmp table in database with all pnfsIDs
 
-        chimera=# create TEMP table tmp_ids (id character varying(36));
-        chimera=# copy tmp_ids from '/tmp/allPnfsIDs_oldHSM';
+            chimera=# create TEMP table tmp_ids (id character varying(36));
+            chimera=# copy tmp_ids from '/tmp/allPnfsIDs_oldHSM';
 
    * Check against t_locationinfo table
 
-        chimera=# select ipnfsid,ilocation from t_locationinfo where ipnfsid in (Select id from tmp_ids) AND ilocation like 'hsm://osm/%';
+             chimera=# select ipnfsid,ilocation from t_locationinfo where ipnfsid in (Select id from tmp_ids) AND ilocation like 'hsm://osm/%';
 
    * Check number of entries above against the row count in the CSV file
 
-        wc -l /tmp/allPnfsIDs_oldHSM
+            wc -l /tmp/allPnfsIDs_oldHSM
 
 * Delete entries from t_locationinfo, with the old tape (allthough this step can be ommitted as it does not hurt)
 
-    chimera=# delete from t_locationinfo where ipnfsid in (Select id from tmp_ids) AND ilocation like 'hsm://osm/%'; 
+            chimera=# delete from t_locationinfo where ipnfsid in (Select id from tmp_ids) AND ilocation like 'hsm://osm/%'; 
