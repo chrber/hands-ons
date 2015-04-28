@@ -2,32 +2,34 @@
 
 ---
 
-Set the pool read-only
+* Set the pool read-only
 
-   [vm-dcache-001] (chrisPool@dCacheDomain) admin > pool disable -rdonly 
+        [vm-dcache-001] (chrisPool@dCacheDomain) admin > pool disable -rdonly 
 
-Move data off the pool (migration move -target=pool | pgroup | link)
+* Move data off the pool (migration move -target=pool | pgroup | link)
 
-    [vm-dcache-001] (chrisPool@dCacheDomain) admin > migration move -target=pool pool_r3
-    or
-    [vm-dcache-001] (chrisPool@resilientChrisPoolsDomain) admin > migration move -target=pgroup ResilientPools
+        [vm-dcache-001] (chrisPool@dCacheDomain) admin > migration move -target=pool pool_r3
 
-Make sure no file is left on the pool
+        or
 
-    [vm-dcache-001] (chrisPool@dCacheDomain) admin > rep ls
+        [vm-dcache-001] (chrisPool@resilientChrisPoolsDomain) admin > migration move -target=pgroup ResilientPools
 
-Stop the pool
+* Make sure no file is left on the pool
 
-    [root@vm-dcache-001 resilient]# dcache stop resilientChrisPoolsDomain
+        [vm-dcache-001] (chrisPool@dCacheDomain) admin > rep ls
 
-Remove pool/domain from layoutfile
+* Stop the pool
 
-Remove pool from PoolGroup
+        [root@vm-dcache-001 resilient]# dcache stop resilientChrisPoolsDomain
 
-    [vm-dcache-001] (PoolManager@dCacheDomain) admin > psu removefrom pgroup ResilientPools chrisPool
+* Remove pool/domain from layoutfile
 
-Remove pool from PoolManager
+* Remove pool from PoolGroup
 
-    [vm-dcache-001] (PoolManager@dCacheDomain) admin > psu remove pool chrisPool
+        [vm-dcache-001] (PoolManager@dCacheDomain) admin > psu removefrom pgroup ResilientPools chrisPool
 
-Remove directory structure from actual backend storage
+* Remove pool from PoolManager
+
+        [vm-dcache-001] (PoolManager@dCacheDomain) admin > psu remove pool chrisPool
+
+* Remove directory structure from actual backend storage
