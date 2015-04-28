@@ -26,24 +26,24 @@ code |                                                                        su
 Use SRM transfer id in the admin interface
 
     [dcache-core-atlas03.desy.de] (SRM-dcache-se-atlas03) admin > ls -l "-1193254804"
-Put file id:-1193254804 state:Failed
-   SURL: srm://dcache-se-atlas.desy.de:8443/srm/managerv2?SFN=/pnfs/desy.de/atlas/dq2/atlasproddisk/rucio/data12_8TeV/78/9b/AOD.01534542._000072.pool.root.1
-   TURL: gsiftp://dcache-door-atlas14.desy.de:2811//upload/b4285977-33c8-4904-a7fc-c4104dd4bac6/AOD.01534542._000072.pool.root.1
-   Size: 6398872127
-   Access latency: null
-   Retention policy: null
-   Space reservation: 310019
-   History:
-      2015-02-20 16:57:02.548 Pending: Request created (0 ms)
-      2015-02-20 16:57:02.548 TQueued: Request enqueued. (1 ms)
-      2015-02-20 16:57:02.549 PriorityTQueued: Waiting for thread. (0 ms)
-      2015-02-20 16:57:02.549 Running: Processing request (0 ms)
-      2015-02-20 16:57:02.549 Running: run method is executed (0 ms)
-      2015-02-20 16:57:02.549 AsyncWait: Doing name space lookup. (35 ms)
-      2015-02-20 16:57:02.584 PriorityTQueued: Waiting for thread. (0 ms)
-      2015-02-20 16:57:02.584 Running: Processing request (0 ms)
-      2015-02-20 16:57:02.584 Running: run method is executed (0 ms)
-      2015-02-20 16:57:02.584 RQueued: Putting on a "Ready" Queue. (0 ms)
-      2015-02-20 16:57:02.584 Ready: Execution succeeded. (60 min)
-      2015-02-20 17:57:12.775 Failed: Request lifetime expired.
+                Put file id:-1193254804 state:Failed
+                   SURL: srm://dcache-se-atlas.desy.de:8443/srm/managerv2?SFN=/pnfs/desy.de/atlas/dq2/atlasproddisk/rucio/data12_8TeV/78/9b/AOD.01534542._000072.pool.root.1
+                   TURL: gsiftp://dcache-door-atlas14.desy.de:2811//upload/b4285977-33c8-4904-a7fc-c4104dd4bac6/AOD.01534542._000072.pool.root.1
+                   Size: 6398872127
+                   Access latency: null
+                   Retention policy: null
+                   Space reservation: 310019
+                   History:
+                      2015-02-20 16:57:02.548 Pending: Request created (0 ms)
+                      2015-02-20 16:57:02.548 TQueued: Request enqueued. (1 ms)
+                      2015-02-20 16:57:02.549 PriorityTQueued: Waiting for thread. (0 ms)
+                      2015-02-20 16:57:02.549 Running: Processing request (0 ms)
+                      2015-02-20 16:57:02.549 Running: run method is executed (0 ms)
+                      2015-02-20 16:57:02.549 AsyncWait: Doing name space lookup. (35 ms)
+                      2015-02-20 16:57:02.584 PriorityTQueued: Waiting for thread. (0 ms)
+                      2015-02-20 16:57:02.584 Running: Processing request (0 ms)
+                      2015-02-20 16:57:02.584 Running: run method is executed (0 ms)
+                      2015-02-20 16:57:02.584 RQueued: Putting on a "Ready" Queue. (0 ms)
+                      2015-02-20 16:57:02.584 Ready: Execution succeeded. (60 min)
+                      2015-02-20 17:57:12.775 Failed: Request lifetime expired.
 
