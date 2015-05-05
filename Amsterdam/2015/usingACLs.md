@@ -42,7 +42,7 @@ Using ACLs in dCache
 * Reducing rights on directory to see effect:
        
  	aclUserElon@vm-dcache-001 aclUserElon]$ nfs4_setfacl -e <directory name> 
-	## Editing NFSv4 ACL for directory: /mnt/acl/aclUserElon
+	\#\# Editing NFSv4 ACL for directory: /mnt/acl/aclUserElon
 	A::OWNER@:rwaDxtTcC
 	A:g:GROUP@:rtc
 	A::EVERYONE@:rtc
