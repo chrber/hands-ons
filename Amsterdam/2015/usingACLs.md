@@ -35,6 +35,23 @@ Using ACLs in dCache
 	A:g:GROUP@:rxtc
 	A::EVERYONE@:rxtc 
 
-* Sharing a file with another user:
+* Sharing a file with another user (if directory permissions to execute, list is not set, this does not work):
 
         nfs4_setfacl -a A::502:r ifcfg-eth0
+
+* Reducing rights on directory to see effect:
+       
+ 	aclUserElon@vm-dcache-001 aclUserElon]$ nfs4_setfacl -e <directory name> 
+	## Editing NFSv4 ACL for directory: /mnt/acl/aclUserElon
+	A::OWNER@:rwaDxtTcC
+	A:g:GROUP@:rtc
+	A::EVERYONE@:rtc
+
+* Try reading a file, this should not work in the directory we just restricted execution (this is the same as list for directories) 
+
+* Create a directory and make it accessible for another user, allow creation of files and inheritance of rights on files and directories
+
+        nfs4_setfacl -e /mnt/acl/aclUserElon/forTim/  
+        A:fd:502:rwaDxtTcC
+
+
