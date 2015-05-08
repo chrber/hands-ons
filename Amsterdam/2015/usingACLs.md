@@ -41,11 +41,11 @@ Using ACLs in dCache
 
 * Reducing rights on directory to see effect:
        
- 	aclUserElon@vm-dcache-001 aclUserElon]$ nfs4_setfacl -e <directory name> 
-	\#\# Editing NFSv4 ACL for directory: /mnt/acl/aclUserElon
-	A::OWNER@:rwaDxtTcC
-	A:g:GROUP@:rtc
-	A::EVERYONE@:rtc
+ 	    aclUserElon@vm-dcache-001 aclUserElon]$ nfs4_setfacl -e <directory name> 
+	    ## Editing NFSv4 ACL for directory: /mnt/acl/aclUserElon
+	    A::OWNER@:rwaDxtTcC
+	    A:g:GROUP@:rtc
+	    A::EVERYONE@:rtc
 
 * Try reading a file, this should not work in the directory we just restricted execution (this is the same as list for directories) 
 
