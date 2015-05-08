@@ -4,23 +4,22 @@ Admin Interface Scripting
 * Scripting the admin interface using bash
 
         [root@vm-dcache-001 adminIfScripting]# cat admin_interface.sh
-	#!/bin/bash
+	    #!/bin/bash
+            adminPort=22224
 
-	adminPort=22224
+	    CMD="ssh -o StrictHostKeyChecking=no -l admin -p $adminPort localhost"
+	    TMP=/tmp/$$_${RAND}.cmd
 
-	CMD="ssh -o StrictHostKeyChecking=no -l admin -p $adminPort localhost"
-	TMP=/tmp/$$_${RAND}.cmd
-
-	admin_interface() {
-	   for i in "$@"
-	   do
-	     echo "$i" >> ${TMP}
-	   done
-	   echo ".."     >> ${TMP}
-	   echo "logoff" >> ${TMP}
-	   ${CMD} < $TMP 2>/dev/null | tr -d '\r'
-	   rm -f ${TMP}
-	}
+	    admin_interface() {
+	       for i in "$@"
+	       do
+	         echo "$i" >> ${TMP}
+	       done
+	       echo ".."     >> ${TMP}
+	       echo "logoff" >> ${TMP}
+	       ${CMD} < $TMP 2>/dev/null | tr -d '\r'
+	       rm -f ${TMP}
+	    }
 
         Source the script
         . ./admin_interface.sh
