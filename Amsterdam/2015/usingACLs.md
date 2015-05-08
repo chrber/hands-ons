@@ -29,11 +29,11 @@ Using ACLs in dCache
 * Checking directory ACLs:
 
         [aclUserElon@vm-dcache-001 aclUserElon]$ pwd
-	/mnt/acl/aclUserElon
-	[aclUserElon@vm-dcache-001 aclUserElon]$ nfs4_getfacl .
-	A::OWNER@:rwaDxtTcC
-	A:g:GROUP@:rxtc
-	A::EVERYONE@:rxtc 
+	    /mnt/acl/aclUserElon
+	    [aclUserElon@vm-dcache-001 aclUserElon]$ nfs4_getfacl .
+	    A::OWNER@:rwaDxtTcC
+	    A:g:GROUP@:rxtc
+	    A::EVERYONE@:rxtc 
 
 * Sharing a file with another user (if directory permissions to execute, list is not set, this does not work):
 
