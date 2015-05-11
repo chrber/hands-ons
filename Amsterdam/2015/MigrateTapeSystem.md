@@ -57,7 +57,7 @@ Procedure:
    * Create tmp table in database with all pnfsIDs
 
             chimera=# create TEMP table tmp_ids (id character varying(36));
-            chimera=# copy tmp_ids from '/tmp/allPnfsIDs_oldHSM';
+            chimera=# copy tmp_ids from '/tmp/allPnfsIDs_oldHSM'; (this files can not be in /root, put it to where the postgres user can read it)
 
    * Check against t_locationinfo table
 
