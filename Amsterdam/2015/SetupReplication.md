@@ -17,4 +17,4 @@
 
 * Put pools into the replica pool group
 
-* Just recently there was a command added to refetch the resilient pools when adding new pools to the PoolGroup: update poolgroup
+* Just recently there was a command added to refetch the resilient pools when adding new pools to the PoolGroup: \s replicaManager update poolgroup
