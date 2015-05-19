@@ -28,11 +28,11 @@ This assumes that you have a hsm to recover files from tape. If this is not the 
 
 * rh restore the files to the newly added pool or let them restore as they are read again.
 
-Another case (more complicated) is when we have a disk only pool, but we might still have cached copies around, which we could restore.
+Another case (more complicated) is when we have a non-resilient disk only pool, but we might still have cached copies around, which we could restore.
 
  * Check which files were on lost pool (list of pnfsIDs)
  * Check which of the lost files might be on tape --> t_locationinfo itype=0 (subtract these from the above pnfsIDs)
- * Which might be cached on some other pool and are cached or as primary copy on some other pool(if primary, subtract them from the list, if cached put them precious there or migration move them to a pool that is save and put them precious there. After that remove them from the list)
+ * Which might be cached on some other pool (hot spot reps) and are cached or as primary copy on some other pool(if primary, subtract them from the list, if cached put them precious there or migration move them to a pool that is save and put them precious there. After that remove them from the list)
  * Remove the resulting list from the t_locationinfo with the ilocation of the lost pool_name
  * Also clean up t_locationinfo_trash
  * The resulting list is the list of lost files. (Ask chimera for the paths and appologise to your users that you lost the files, send them the list and let them delete them from the namespace, catalog)
